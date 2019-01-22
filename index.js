@@ -1,8 +1,8 @@
-let RNRandomBytes = require("react-native").NativeModules.RNRandomBytes;
-let Buffer = require("buffer");
+var RNRandomBytes = require("react-native").NativeModules.RNRandomBytes;
+var { Buffer } = require("buffer");
 
 function toBuffer(nativeStr) {
-  return new Buffer(nativeStr, "base64");
+  return Buffer.from(nativeStr, "base64");
 }
 
 export function randomBytes(length, cb) {
